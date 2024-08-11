@@ -26,28 +26,28 @@ pip install -r requirements.txt
 
 ```
 AIGDataset
-  ©À©¤©¤ PolarGate_raw
-  ©À©¤©¤ PolarGate_processed
-       ©À©¤©¤ npz
-           ©À©¤©¤ pi_edges.npz
-           ©À©¤©¤ labels.npz
-       ©À©¤©¤ [circuit_name]
-           ©À©¤©¤ raw
-               ©À©¤©¤ node-feat.csv
-               ©À©¤©¤ prob.csv
-               ©À©¤©¤ signed_edge.csv
-       ©À©¤©¤ split
-           ©À©¤©¤ 0.01-0.01-0.98
-           ©À©¤©¤ 0.02-0.02-0.96
-           ©À©¤©¤ 0.05-0.05-0.9
-           ©À©¤©¤ 0.1-0.1-0.8
+  â”œâ”€â”€ PolarGate_raw
+  â”œâ”€â”€ PolarGate_processed
+       â”œâ”€â”€ npz
+           â”œâ”€â”€ pi_edges.npz
+           â”œâ”€â”€ labels.npz
+       â”œâ”€â”€ [circuit_name]
+           â”œâ”€â”€ raw
+               â”œâ”€â”€ node-feat.csv
+               â”œâ”€â”€ prob.csv
+               â”œâ”€â”€ signed_edge.csv
+       â”œâ”€â”€ split
+           â”œâ”€â”€ 0.01-0.01-0.98
+           â”œâ”€â”€ 0.02-0.02-0.96
+           â”œâ”€â”€ 0.05-0.05-0.9
+           â”œâ”€â”€ 0.1-0.1-0.8
 PolarGate
-  ©À©¤©¤ layers.py
-  ©À©¤©¤ model.py
-  ©À©¤©¤ load_data.py
-  ©À©¤©¤ preprocess_data.py
-  ©À©¤©¤ train.py
-  ©À©¤©¤ train.sh
+  â”œâ”€â”€ layers.py
+  â”œâ”€â”€ model.py
+  â”œâ”€â”€ load_data.py
+  â”œâ”€â”€ preprocess_data.py
+  â”œâ”€â”€ train.py
+  â”œâ”€â”€ train.sh
 ```
 
 ## Prepare Dataset
