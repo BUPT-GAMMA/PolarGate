@@ -219,22 +219,20 @@ class restPolarGateConv(MessagePassing):
 
         F_in = self.in_dim
 
+        # update positive embeddings
         out_b1 = self.propagate(pos_edge_index, x=(
             x[0][..., :F_in], x[1][..., :F_in]))
         out_b2 = self.propagate(neg_edge_index, x=(
             x[0][..., F_in:], x[1][..., F_in:]))
         out_b = torch.cat([out_b1, out_b2 * -1, x[1][..., :F_in]], dim=-1)
-        # # only change and gate
-        # out_b = torch.cat([out_b1, out_b2, x[1][..., :F_in]], dim=-1)
         out_b = self.lin_b(out_b)
 
+        # update negative embeddings
         out_u1 = self.propagate(pos_edge_index, x=(
             x[0][..., F_in:], x[1][..., F_in:]))
         out_u2 = self.propagate(neg_edge_index, x=(
             x[0][..., :F_in], x[1][..., :F_in]))
         out_u = torch.cat([out_u1, out_u2 * -1, x[1][..., F_in:]], dim=-1)
-        # # only change and gate
-        # out_u = torch.cat([out_u1, out_u2, x[1][..., F_in:]], dim=-1)
         out_u = self.lin_u(out_u)
 
         out = torch.cat([out_b, out_u], dim=-1)
